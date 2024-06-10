@@ -1,4 +1,4 @@
-/*import express from 'express';
+import express from 'express';
 import { createServer } from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -58,7 +58,7 @@ if (cluster.isPrimary) {
       try {
         result = await db.run('INSERT INTO messages (content, client_offset) VALUES (?, ?)', msg, clientOffset);
       } catch (e) {
-        if (e.errno === 19 /* SQLITE_CONSTRAINT  ) {
+        if (e.errno === 19) {
           callback();
         } else {
           // nothing to do, just let the client retry
@@ -91,7 +91,7 @@ if (cluster.isPrimary) {
 }
 */
 
-// Snake class
+/* Snake class
 class Snake {
   constructor() {
     this.body = [{ x: 10, y: 10 }];
@@ -220,3 +220,4 @@ document.addEventListener("keydown", (event) => {
     snake.direction = "right";
   }
 });
+*/
