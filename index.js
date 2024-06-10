@@ -1,4 +1,4 @@
-import express from 'express';
+/*import express from 'express';
 import { createServer } from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -91,7 +91,7 @@ if (cluster.isPrimary) {
 }
 */
 
-/* Snake class
+ Snake class
 class Snake {
   constructor() {
     this.body = [{ x: 10, y: 10 }];
@@ -220,4 +220,3 @@ document.addEventListener("keydown", (event) => {
     snake.direction = "right";
   }
 });
-*/
