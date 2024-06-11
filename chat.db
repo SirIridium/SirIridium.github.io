@@ -1,0 +1,13 @@
+??,??P++Ytablesqlite_sequencesqlite_sequenceCREATE TABLE sqlite_sequence(name,seq)??tablemessagesmessagesCREATE TABLE messages (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      client_offset TEXT UNIQUE,
+      content TEXT
+?lLpF__AoeCUUWp0FAAAi-1e099lLpF__AoeCUUWp0FAAAi-0Hello Luke is a stupid9-3tgmyaDkvTFevbUAAAB-0ozo9oSB6CGx-Y0wyRxSUAAAB-0Bozo9J5axEazfzp0bwZJ9AAAE-1HelloJ5axEazf9R7EpzpJrkZy8ixepAAAB-0clear
+                            6g9XxVpRqiCfeIN7AAAB-1e
+                                                   6g9XxVpRqiCfeIN7AAAB-0e
+9h8UPTZlMwHShfej-AAAB-0Hello5	9CMKBwL0qdVNzMH2SZAAAH-0Everything is backed up no9cqormOUP4WfnH-FCAAAE-3eecqormOUP4WfnH-FCAAAE-2ecqormOUP4WfnH-FCAAAE-1e9cqormOUP4WfnH-FCAAAE-0Helloee)How's it going	Hello
+X?????0??f?????KsX?9lLpF__AoeCUUWp0FAAAi-19lLpF__AoeCUUWp0FAAAi-09-3tgmyaDkvTFevbUAAAB-09oSB6CGx-Y0wyRxSUAAAB-09J5axEazfzp0bwZJ9AAAE-19J5axEazfzp0bwZJ9AAAE-09R796g9XxVpRqiCfeIN7AAAB-1
+                       96g9XxVpRqiCfeIN7AAAB-0
+                                              9h8UPTZlMwHShfej-AAAB-0
+9MKBwL0qdVNzMH2SZAAAH-0	9cqormOUP4WfnH-FCAAAE-9cqormOUP4WfnH-FCAAAE-29cqormOUP4W??H-FCAAAE-19cqormOUP4WfnH-FCAAAE-0	
+  messages%
