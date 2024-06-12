@@ -75,12 +75,13 @@
     <title>Snake Game</title>
 </head>
 <body>
-<canvas id="gameCanvas" style="border:5px" fillStyle:"solid #8F00FF"></canvas>
+<canvas id="gameCanvas" style="border:5px solid #7FFF00"></canvas>
 
 
 <script>
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
+ ctx.fillStyle= "#8F00FF";
     gameCanvas.width = window.innerWidth;
     gameCanvas.height = window.innerHeight;
     const box = 20;
