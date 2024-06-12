@@ -61,11 +61,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-<canvas id="gameCanvas" width="1500" height="800" style="border:5px solid #000000">    </canvas>
+<canvas id="gameCanvas" style="border:5px solid #000000">    </canvas>
+ 
 <script>
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
-
+    gameCanvas.width = window.innerWidth;
+    gameCanvas.height = window.innerHeight;
     const box = 20;
     let snake = [];
     snake[0] = {
