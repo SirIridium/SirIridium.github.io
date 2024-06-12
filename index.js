@@ -1,4 +1,4 @@
-/* import express from 'express';
+ import express from 'express';
 import { createServer } from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -89,60 +89,4 @@ if (cluster.isPrimary) {
     console.log(`server running at http://localhost:${port}`);
   });
 }
-*/
-// Importing required libraries
-const express = require('express');
-const http = require('http');
-const socketIo = require('socket.io');
-
-// Initialize an Express application
-const app = express();
-const server = http.createServer(app);
-const io = socketIo(server);
-
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
-
-// Define the port number
-const PORT = process.env.PORT || 3000;
-
-// Store player data
-let players = {};
-
-// Handle WebSocket connections
-io.on('connection', (socket) => {
-    console.log('A user connected:', socket.id);
-
-    // Initialize player data
-    players[socket.id] = {
-        x: Math.floor(Math.random() * 500),
-        y: Math.floor(Math.random() * 500),
-        color: '#' + Math.floor(Math.random() * 16777215).toString(16)
-    };
-
-    // Send initial player data
-    socket.emit('currentPlayers', players);
-
-    // Broadcast new player to others
-    socket.broadcast.emit('newPlayer', players[socket.id]);
-
-    // Handle player movement
-    socket.on('playerMovement', (movementData) => {
-        players[socket.id].x += movementData.x;
-        players[socket.id].y += movementData.y;
-        io.emit('playerMoved', { id: socket.id, x: players[socket.id].x, y: players[socket.id].y });
-    });
-
-    // Handle player disconnection
-    socket.on('disconnect', () => {
-        console.log('A user disconnected:', socket.id);
-        delete players[socket.id];
-        io.emit('playerDisconnected', socket.id);
-    });
-});
-
-// Start the server
-server.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
 
