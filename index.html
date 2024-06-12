@@ -62,9 +62,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+</head>
 <body>
-<canvas id="gameCanvas" style="border:5px solid #000000">    </canvas>
- 
+<canvas id="gameCanvas" style="border:5px solid #000000"></canvas>
+<button id="resetButton">Reset Game</button>
+
 <script>
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
@@ -78,8 +84,8 @@
     };
 
     let food = {
-        x: Math.floor(Math.random() * window.innerWidth/20) * box,
-        y: Math.floor(Math.random() * window.innerHeight/20) * box
+        x: Math.floor(Math.random() * window.innerWidth / 20) * box,
+        y: Math.floor(Math.random() * window.innerHeight / 20) * box
     };
 
     let score = 0;
@@ -134,8 +140,8 @@
         if (snakeX === food.x && snakeY === food.y) {
             score++;
             food = {
-                x: Math.floor(Math.random() * window.innerWidth/20) * box,
-                y: Math.floor(Math.random() * window.innerHeight/20) * box
+                x: Math.floor(Math.random() * window.innerWidth / 20) * box,
+                y: Math.floor(Math.random() * window.innerHeight / 20) * box
             };
         } else {
             snake.pop();
@@ -156,32 +162,33 @@
         ctx.font = "45px Changa one";
         ctx.fillText(score, 2 * box, 1.6 * box);
     }
-    const resetButton = document.getElementById('resetButton');
-resetButton.addEventListener('click', resetGame);
-
-function resetGame() {
-    // Reset snake position
-    snake = [];
-    snake[0] = {
-        x: 10 * box,
-        y: 10 * box
-    };
-
-    // Reset food position
-    food = {
-        x: Math.floor(Math.random() * window.innerWidth / 20) * box,
-        y: Math.floor(Math.random() * window.innerHeight / 20) * box
-    };
-
-    // Reset score
-    score = 0;
-
-    // Reset direction
-    d = undefined;
-}
 
     let game = setInterval(draw, 100);
+
+    // Reset Button Functionality
+    const resetButton = document.getElementById('resetButton');
+    resetButton.addEventListener('click', resetGame);
+
+    function resetGame() {
+        // Reset snake position
+        snake = [];
+        snake[0] = {
+            x: 10 * box,
+            y: 10 * box
+        };
+
+        // Reset food position
+        food = {
+            x: Math.floor(Math.random() * window.innerWidth / 20) * box,
+            y: Math.floor(Math.random() * window.innerHeight / 20) * box
+        };
+
+        // Reset score
+        score = 0;
+
+        // Reset direction
+        d = undefined;
+    }
 </script>
 </body>
 </html>
-
