@@ -132,8 +132,8 @@
         if (snakeX === food.x && snakeY === food.y) {
             score++;
             food = {
-                x: Math.floor(Math.random() * 20) * box,
-                y: Math.floor(Math.random() * 20) * box
+                x: Math.floor(Math.random() * window.innerWidth/20) * box,
+                y: Math.floor(Math.random() * window.innerHeight/20) * box
             };
         } else {
             snake.pop();
