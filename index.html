@@ -22,6 +22,8 @@
     <form id="form" action="">
       <input id="input" autocomplete="off" /><button>Send</button>
     </form>
+   <button id="resetButton">Reset Game</button>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
       let counter = 0;
@@ -154,6 +156,29 @@
         ctx.font = "45px Changa one";
         ctx.fillText(score, 2 * box, 1.6 * box);
     }
+    const resetButton = document.getElementById('resetButton');
+resetButton.addEventListener('click', resetGame);
+
+function resetGame() {
+    // Reset snake position
+    snake = [];
+    snake[0] = {
+        x: 10 * box,
+        y: 10 * box
+    };
+
+    // Reset food position
+    food = {
+        x: Math.floor(Math.random() * window.innerWidth / 20) * box,
+        y: Math.floor(Math.random() * window.innerHeight / 20) * box
+    };
+
+    // Reset score
+    score = 0;
+
+    // Reset direction
+    d = undefined;
+}
 
     let game = setInterval(draw, 100);
 </script>
